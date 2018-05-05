@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Ricardo Alvarado",
+      "authorEmail": "r.alvarado@accenture.com",
+      "authorUrl": ""
+    }
+  }
+}
