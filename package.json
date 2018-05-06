@@ -34,9 +34,10 @@
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",
+    "camelcase": "^5.0.0",
     "chalk": "^2.1.0",
-    "yosay": "^2.0.1",
-    "maven": "^4.4.0"
+    "maven": "^4.4.0",
+    "yosay": "^2.0.1"
   },
   "jest": {
     "testEnvironment": "node"

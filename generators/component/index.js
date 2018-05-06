@@ -24,7 +24,7 @@ module.exports = class extends Generator {
     const prompts = [
       {
         type    : 'input',
-        name    : 'componentName',
+        name    : 'componentTitle',
         message : 'What is the component name?',
         default : 'customComponent'
       },
@@ -63,13 +63,24 @@ module.exports = class extends Generator {
   }
 
   writing() {
+      const camelCase = require('camelcase');
+      const componentsFolder = '\\' + artifactId + '\\ui.apps\\src\\main\\content\\jcr_root\\apps\\' + appsFolderName + '\\components';
       let artifactId = this.config.get('artifactId');
       let appsFolderName = this.config.get('appsFolderName') ? this.config.get('appsFolderName') : artifactId;
-      const componentsFolder = '\\' + artifactId + '\\ui.apps\\src\\main\\content\\jcr_root\\apps\\' + appsFolderName + '\\components';
+      let componentName = camelCase(this.props.componentTitle);
+
       this.fs.copyTpl(
         this.templatePath('component.html'),
-        this.destinationPath(this.destinationRoot() + componentsFolder + '\\' + this.props.componentFolder + '\\' + this.props.componentName + '\\' + this.props.componentName + '.html'),
-        { title: 'Component element' }
+        this.destinationPath(this.destinationRoot() + componentsFolder + '\\' + this.props.componentFolder + '\\' + componentName + '\\' + componentName + '.html'),
+        {
+          componentClassName: this.props.componentClassName
+          componentTitle: this.props.componentTitle,
+          componentName: componentName,
+          componentGroup: this.props.componentGroup,
+          componentDescription: this.props.componentDescription,
+          htmlTag: this.props.htmlTag
+
+         }
       );
   }
 
