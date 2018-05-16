@@ -1,0 +1,15 @@
+<% if (sampleContent.indexOf('textfield') > -1) { %> textField YES! <% } %>
+<div class="custom-component" data-sly-test.isConfigured="${ <% if (sampleContent.indexOf('image') > -1) { %> properties.fileReference <% } %> <% if (sampleContent.indexOf('image') > -1 && sampleContent.indexOf('textfield') > -1) { %> || <% } %> <% if (sampleContent.indexOf('textfield') > -1) { %> properties.textfield <% } %> <% if (sampleContent.indexOf('textfield') > -1 && sampleContent.indexOf('textarea') > -1) { %> || <% } %> <% if (sampleContent.indexOf('textarea') > -1) { %> properties.textarea <% } %> }">
+<% if (sampleContent.indexOf('image') > -1) { %>
+    <img class="custom-image" src="${ properties.fileReference }" alt="${ properties.alt }" />
+<% } %>
+<% if (sampleContent.indexOf('textfield') > -1) { %>
+    <h4>${ properties.textfield }</h4>
+<% } %>
+<% if (sampleContent.indexOf('textarea') > -1) { %>
+    <p>${ properties.textarea }</p>
+<% } %>
+</div>
+<sly data-sly-test="${ !isConfigured }"
+    data-sly-use.notConfigured="/apps/bootcamp/practice-011/components/structure/component-not-configured-template/not-configured.html"
+    data-sly-call="${ notConfigured.componentData @ title=component.title }" />

@@ -1,0 +1,9 @@
+.profile-card img {
+  width: 150px;
+  height: 150px;
+  border: 6px solid #dedede; 
+}
+.profile-card .job-position {
+  font-style: italic;
+  color: #59a0d7; 
+}

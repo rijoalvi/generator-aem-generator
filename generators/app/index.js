@@ -170,15 +170,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.html'),
-      this.destinationPath('dummyfile.html')
-    );
-    this.fs.copyTpl(
-      this.templatePath('dummyfile.html'),
-      this.destinationPath('dummyfileParsed.html'),
-      { title: 'Templating with Yeoman', description: 'Holis' }
-    );
+
   }
 
   install() {

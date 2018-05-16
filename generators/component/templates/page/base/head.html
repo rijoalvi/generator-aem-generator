@@ -1,0 +1,22 @@
+<template data-sly-template.head="${ @ page }">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"
+          data-sly-use.headlibRenderer="headlibs.html"
+          data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+    <meta data-sly-test.keywords="${page.keywords}" name="keywords" content="${keywords}"/>
+    <meta data-sly-test.description="${properties['jcr:description']}" name="description" content="${description}"/>
+    <meta data-sly-test.templateName="${page.templateName}" name="template" content="${templateName}"/>
+    <!-- Custom Meta Tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <sly data-sly-include="head.socialmedia.html"></sly>    
+    <!-- Base Client Library -->
+    <sly data-sly-use.baseClientLib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-call="${baseClientLib.css @ categories='page.base'}"/>
+    <sly data-sly-include="customheaderlibs.html"></sly>
+    <sly data-sly-call="${headlibRenderer.headlibs @
+                                designPath         = page.designPath,
+                                staticDesignPath   = page.staticDesignPath,
+                                clientLibCategories = page.clientLibCategories}"></sly>
+
+    <sly data-sly-include="title.html"></sly>
+</template>
