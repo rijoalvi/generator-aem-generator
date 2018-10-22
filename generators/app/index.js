@@ -185,9 +185,9 @@ module.exports = class extends Generator {
         // As mvn.execute(..) returns a promise, you can use this block to continue
         // your stuff, once the execution of the command has been finished successfully.
       });
-  } else {
+    } else {
       this.log('Your project is ready!');
-  }
+    }
       //this.installDependencies();
   }
 };

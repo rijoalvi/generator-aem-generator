@@ -29,8 +29,7 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="Enter a single line text"
                                 fieldLabel="Textfield"
-                                name="./textfield"
-                                useFixedInlineToolbar="{Boolean}true"/>
+                                name="./textfield"/>
 <% }  if (sampleContent.indexOf('textarea') > -1) { %>
                             <textArea
                                 jcr:primaryType="nt:unstructured"
