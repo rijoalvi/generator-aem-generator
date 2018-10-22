@@ -1,19 +1,31 @@
-# generator-aem-generator [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+generator-aem-generator (Work in progress) [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A generator for creating full projects from scratch, components, clientlibs, dialogs and models.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-aem-generator using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-aem-generator
+```
+
+Then navigate to the project root folder, set it up and link it so it can be discovered by yeoman
+
+```bash
+npm install
+npm link
 ```
 
 Then generate your new project:
 
 ```bash
 yo aem-generator
+```
+
+to run a subgenerator, just add quotes after the generator command and write the subgenerator you want to run
+
+```bash
+yo aem-generator:clientlib
 ```
 
 ## Getting To Know Yeoman
